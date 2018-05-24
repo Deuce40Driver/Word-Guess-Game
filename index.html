@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html id = html lang = "en-us">
+</html>
+
+<head>
+    <meta charset = "UTF-8">
+    <title>CARS!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class = "container">
+
+        <div class = "row">
+            <div id = "header" class = "col-md-12">
+                <h1 class="display-4">Cars Word Guess</h1>
+                <p class="lead">Press Any Key To Begin</p>
+            </div>
+        </div>
+
+    
+        <div id = "nav" class = "row">
+            <div class = "col-md-3">
+                <h4 class = "text-center">Guesses</h4>
+                <p id = "guesses" class = "lead text-center"></p>
+            </div>
+            <div class = "col-md-3">
+                <h4 class = "text-center">Wins</h4>
+                <p id = "wins" class = "lead text-center"></p>
+            </div>
+            <div class = "col-md-3">
+                <h4 class = "text-center">Losses</h4>
+                <p id = "losses" class = "lead text-center"></p>
+            </div>
+            <div class = "col-md-3">
+                <h4 class = "text-center">New Word</h4>
+                <a id = "reset" class = "lead text-center" href="#">Reset</a>    
+            </div>
+        </div>
+
+       
+
+        <div id = "game" class = "row top-buffer{ margin-top:20px; }">
+            <div class = "col-md-12">
+                <h1 id = "guessedWord" class = "text-center"></h1> 
+            </div>
+        </div>
+
+        <div id = "footer" class = "row">
+            <div class = "col-md-12">
+                <h3 class = "text-center">Letters Used</h3>
+                <h4 id = "lettersWrong" class = "lead text-center">Letters</h4>
+            </div>
+        </div>
+
+    </div>
+    
+
+        
+    <script>
+
+        var wins = 0;
+        var losses = 0;
+        var guesses = 6;
+        var words = [
+            "CORVETTE",
+            "CHEVROLET",
+            "FORD",
+            "DODGE",
+            "NISSAN",
+            "TOYOTA",
+            "MAZADA",
+            "MERCEDES",
+            "FERRARI",
+            "PORSCHE",
+            "AUDI",
+            "BMW",
+            "LAMBORGHINI",
+        ];
+        
+        var word = words[Math.floor(Math.random() * words.length)];
+                
+        var blankAnswer = [];
+            for ( var i = 0; i < word.length; i++) {
+            blankAnswer[i] = "_";
+            }
+        
+        document.onkeypress = function(startGame){
+            document.getElementById("guessedWord").innerHTML = blankAnswer;
+            document.getElementById("guesses").innerHTML = guesses;
+            document.getElementById("wins").innerHTML = wins;
+            document.getElementById("losses").innerHTML = losses;
+            alert("Guess a letter to begin playing");
+        };
+
+        
+        document.onkeyup = function(event) {
+            if (event.key === "guessedWord".charAt(0)) {
+               document.getElementById("guessedWord".charAt(0)).innerHTML = event.key;
+            };
+        }
+
+        document.getElementById("reset").onclick = function() {
+            document.getElementById("guessedWord").innerHTML = blankAnswer;
+        }
+
+
+        // document.onkeyup = function(event) {
+            // console.log(event.key);
+        // }
+
+           //for (var j = 0; j < studentsRow2.length; j++) {
+        //  if (studentsRow2[j].charAt(0) === "J") {
+        //  console.log("Starts with a J " + studentsRow2[j]);
+        //  }
+        //  }    
+
+
+//$("#button-1").on("click", ".number", function() {
+//  $("#lettersWrong").append("1");
+//  $(firstNumber).append("1");
+//});
+   
+        // When user presses any key pick a word from the list
+        
+        // Prompt user to pick a letter
+        
+        // If the letter is in the word show the letter on the screen
+        
+        // If the letter is not in the word show it
+        
+        // If the user gets 6 wrong guesses show game over, add 1 to losses, and reset game.
+        
+        // If the user guesses all the letters correctly show win, add 1 to wins, and reset the game
+        
+        // Button if the user wants to reset the game
+        
+ 
+        
+                
+        
+            </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>

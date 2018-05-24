@@ -1,0 +1,25 @@
+
+body {
+    background-image: url("../images/super_sports_cars-HD.jpg");
+    background-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#nav {
+    padding-bottom: 15px;
+}
+
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: lightgray;
+    padding-bottom: 20px;
+}
